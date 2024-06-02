@@ -1,0 +1,40 @@
+/* Header */
+header {
+	display: flex;
+	gap: var(--spacing-rel-base) var(--spacing-rel-small);
+	flex-wrap: wrap;
+	align-items: center;
+	padding: var(--spacing-rel-base) var(--spacing-base);
+}
+.header-wrapper {
+	display: flex;
+	align-items: baseline;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 950;
+	margin-inline-end: var(--spacing-rel-large);
+	text-transform: uppercase;
+	font-stretch: 120%;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-inline-end: var(--spacing-rel-base);
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}

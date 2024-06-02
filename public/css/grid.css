@@ -1,0 +1,28 @@
+/* Grid */
+
+.page-grid {
+	display: grid;
+	grid-template-columns:
+		[page-start] minmax(0, 1fr)
+		[content-start] minmax(0, var(--page-width)) [content-end]
+		minmax(0, 1fr) [page-end];
+}
+.sidebar-grid {
+	@media screen and (min-width: 60rem) {
+		display: grid;
+		column-gap: 0.5rem;
+		grid-template-columns: minmax(0, 3fr) minmax(15rem, 1fr);
+	}
+}
+.subgrid {
+	display: grid;
+	grid-template-columns: subgrid;
+}
+.span-content {
+	grid-column-start: content-start;
+	grid-column-end: content-end;
+}
+.span-page {
+	grid-column-start: page-start;
+	grid-column-end: page-end;
+}

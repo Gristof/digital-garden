@@ -1,0 +1,18 @@
+/* Fonts */
+@font-face {
+	font-family: "Mona Sans";
+	src: url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+	font-weight: 125 950;
+	font-stretch: 75% 125%;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Hubot Sans";
+	src: url("/fonts/Hubot-Sans.woff2") format("woff2-variations");
+	font-weight: 125 950;
+	font-stretch: 75% 125%;
+	font-style: normal;
+	font-display: swap;
+}

@@ -1,0 +1,95 @@
+/* Global styles */
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family-body);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	font-size: clamp(var(--font-size-min), 1vw + 1rem, var(--font-size-max));
+	max-width: var(--page-width);
+}
+
+main {
+	padding: var(--spacing-base);
+}
+
+main :where(h1, h2, h3, h4, h5, h6) {
+	font-family: var(--font-family-display);
+	font-weight: var(--font-weight-display);
+	font-stretch: var(--font-stretch-display);
+	text-transform: capitalize;
+}
+
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+a[target="_blank"]::after {
+	content: "↗";
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: var(--spacing-rel-small) 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-inline-start: var(--spacing-rel-tiny);
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: hsl(0, 0%, 67%);
+}
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
