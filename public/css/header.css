@@ -10,12 +10,13 @@ header {
 	display: flex;
 	align-items: baseline;
 }
-.home-link {
+.home-link.home-link {
 	font-size: 1em; /* 16px /16 */
 	font-weight: 950;
 	margin-inline-end: var(--spacing-rel-large);
 	text-transform: uppercase;
 	font-stretch: 120%;
+	color: var(--color-brand);
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;

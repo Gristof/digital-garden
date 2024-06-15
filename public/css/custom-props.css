@@ -1,79 +1,149 @@
-/* TODO: utilize custom props in a more efficient way */
+/**
+ * Primitive Color Tokens (Kanagawa Color Palette)
+ */
+:root {
+	--fuji-white: #dcd7ba;
+	--old-white: #c8c093;
+	--sumi-ink0: #16161d;
+	--sumi-ink1: #1f1f28;
+	--sumi-ink2: #2a2a37;
+	--sumi-ink3: #363646;
+	--sumi-ink4: #54546d;
+	--wave-blue1: #223249;
+	--wave-blue2: #2d4f67;
+	--winter-green: #2b3328;
+	--winter-yellow: #49443c;
+	--winter-red: #43242b;
+	--winter-blue: #252535;
+	--autumn-green: #76946a;
+	--autumn-red: #c34043;
+	--autumn-yellow: #dca561;
+	--samurai-red: #e82424;
+	--ronin-yellow: #ff9e3b;
+	--wave-aqua1: #6a9589;
+	--wave-aqua2: #7aa89f;
+	--dragon-blue: #658594;
+	--fuji-gray: #727169;
+	--spring-violet1: #938aa9;
+	--spring-violet2: #9cabca;
+	--oni-violet: #957fb8;
+	--crystal-blue: #7e9cd8;
+	--spring-blue: #7fb4ca;
+	--light-blue: #a3d4d5;
+	--spring-green: #98bb6c;
+	--boat-yellow1: #938056;
+	--boat-yellow2: #c0a36e;
+	--carp-yellow: #e6c384;
+	--sakura-pink: #d27e99;
+	--wave-red: #e46876;
+	--peach-red: #ff5d62;
+	--surimi-orange: #ffa066;
+	--katana-gray: #717c7c;
+}
 
 /**
-	design tokens / custom properties
-	--font-size-min
-	--font-size-max
-	--font-weight-default
-	--font-stretch-default
-	--font-weight-display
-	--font-stretch-display
-	--spacing-base
-*/
-
-/* Defaults */
+ * Semantic Color Tokens
+ */
 :root {
-	--font-family-body: "Mona Sans", system-ui, sans-serif;
-	--font-family-display: "Hubot Sans", system-ui, sans-serif;
+	/* SURFACE */
+	--color-surface: #f1f1f1;
+	--color-surface-dim: #e9e9e9;
+	--color-surface-bright: #f1f1f1;
+
+	/* ON SURFACE */
+	--color-on-surface: var(--sumi-ink1);
+	--color-on-surface-variant: var(--sumi-ink2);
+
+	/* OUTLINE */
+	--color-outline: var(--sumi-ink1);
+	--color-outline-variant: var(--sumi-ink2);
+
+	/* PRIMARY */
+	--color-primary: var(--wave-blue2);
+	--color-on-primary: #e2e1e1;
+	--color-primary-container: null;
+	--color-on-primary-container: null;
+
+	/* BRAND */
+	--color-brand: var(--samurai-red);
+
+	/* INVERSE */
+	--color-inverse-surface: var(--color-on-surface);
+	--color-inverse-on-surface: var(--color-surface);
+	--color-inverse-primary: var(--crystal-blue);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* SURFACE */
+		--color-surface: var(--sumi-ink1);
+		--color-surface-dim: var(--sumi-ink0);
+		--color-surface-bright: var(--sumi-ink2);
+
+		/* ON SURFACE */
+		--color-on-surface: var(--fuji-white);
+		--color-on-surface-variant: var(--fuji-gray);
+
+		/* OUTLINE */
+		--color-outline: var(--fuji-white);
+		--color-outline-variant: var(--fuji-gray);
+
+		/* PRIMARY */
+		--color-primary: var(--crystal-blue);
+		--color-on-primary: var(--winter-blue);
+		--color-primary-container: null;
+		--color-on-primary-container: null;
+
+		/* BRAND */
+		--color-brand: var(--boat-yellow2);
+
+		/* INVERSE */
+		--color-inverse-surface: var(--color-on-surface);
+		--color-inverse-on-surface: var(--color-surface);
+		--color-inverse-primary: var(--wave-blue2);
+	}
+}
+
+/**
+ * Scoped Color Tokens
+ */
+:root {
+	--link-color: var(--color-primary);
+	--tag-color-surface: var(--color-surface-dim);
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--tag-color-surface: var(--color-surface-bright);
+	}
+}
+
+/**
+ * Typography
+ */
+:root {
+	--font-family-body: system-ui, sans-serif;
+	--font-family-display: system-ui, sans-serif;
 	--font-weight-display: 820;
 	--font-stretch-display: 125%;
-	--font-family-monospace: Menlo, monospace;
+	--font-family-monospace: ui-monospace, monospace;
 
 	--font-size-min: 1rem;
 	--font-size-max: 1.5rem;
+}
 
+/**
+ * Spacing
+ */
+:root {
 	--page-width: 110ch;
-
-	--syntax-tab-size: 2;
-
-	--color-accent-hue-on-light: 327;
-	--color-accent-hue-on-dark: 104;
-
-	--border-radius: 0.25em;
 
 	--spacing-base: 1rem;
 	--spacing-rel-large: 2em;
 	--spacing-rel-base: 1em;
 	--spacing-rel-small: 0.5em;
 	--spacing-rel-tiny: 0.25em;
-}
 
-/* Theme colors */
-:root {
-	--color-gray-20: hsl(var(--color-accent-hue-on-light), 5%, 88%);
-	--color-gray-50: hsl(var(--color-accent-hue-on-light), 5%, 50%);
-	--color-gray-90: hsl(var(--color-accent-hue-on-light), 5%, 20%);
+	--syntax-tab-size: 2;
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: hsl(var(--color-accent-hue-on-light), 78%, 24%);
-	--text-color-link-active: hsl(var(--color-accent-hue-on-light), 38%, 34%);
-	--text-color-link-visited: var(--text-color-link);
-	--text-color-link-weak: hsla(
-		var(--color-accent-hue-on-light),
-		81%,
-		74%,
-		0.15
-	);
-
-	--background-color: hsl(var(--color-accent-hue-on-light), 15%, 95%);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: hsl(var(--color-accent-hue-on-dark), 5%, 20%);
-		--color-gray-50: hsl(var(--color-accent-hue-on-dark), 5%, 50%);
-		--color-gray-90: hsl(var(--color-accent-hue-on-dark), 5%, 85%);
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: hsl(var(--color-accent-hue-on-dark), 81%, 74%);
-		--text-color-link-active: hsl(var(--color-accent-hue-on-dark), 61%, 64%);
-		--text-color-link-weak: hsla(
-			var(--color-accent-hue-on-dark),
-			81%,
-			74%,
-			0.15
-		);
-
-		--background-color: hsl(var(--color-accent-hue-on-dark), 15%, 13%);
-	}
+	--border-radius: 0.25em;
 }

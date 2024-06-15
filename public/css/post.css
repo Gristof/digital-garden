@@ -1,23 +1,18 @@
 /* Tags */
-.post-tag {
+.post-tag.post-tag {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	text-transform: capitalize;
 	font-style: italic;
+	font-weight: 700;
+	letter-spacing: 0.01em;
 	font-size: 0.775em;
-	background-color: var(--text-color-link-weak);
+	background-color: var(--tag-color-surface);
 	padding: var(--spacing-rel-tiny) var(--spacing-rel-small);
 	border-radius: var(--border-radius);
 	line-height: 1.1;
 	text-decoration: none;
-	&:visited {
-		border-color: var(--text-color-link-visited);
-	}
-	&:active,
-	&:hover {
-		border-color: var(--text-color-link-active);
-	}
 }
 .postlist-item > .post-tag {
 	align-self: center;
@@ -44,7 +39,7 @@
 .links-nextprev {
 	list-style: none;
 	padding: var(--spacing-rel-base) 0;
-	border-top: 2px dashed var(--text-color);
+	border-top: 2px dashed var(--color-outline);
 }
 
 /* Table */
@@ -57,7 +52,7 @@
 table {
 	font-family: var(--font-family-monospace);
 	padding: var(--spacing-rel-small) var(--spacing-rel-base);
-	border: 2px solid var(--text-color);
+	border: 2px solid var(--color-outline);
 	border-radius: var(--border-radius);
 }
 table td,
@@ -70,10 +65,10 @@ table th {
 	border-end-end-radius: 0;
 }
 .table-wrapper > table + p {
-	color: var(--background-color);
-	background-color: var(--text-color);
 	padding: var(--spacing-rel-tiny) var(--spacing-rel-small)
 		var(--spacing-rel-tiny);
+	border: 2px solid var(--color-outline);
+	border-block-start: none;
 	border-end-end-radius: var(--border-radius);
 	border-end-start-radius: var(--border-radius);
 	margin-block-start: 0;

@@ -18,5 +18,8 @@ Article ideas:
 - [ ] design tokens
 - [ ] automated (and manual) a11y testing
 - [ ] from the first design token to setting up an aws environment
+- [ ] proper labeling of multiple links with the same text
+- [ ] make dropdowns accessible
+- [ ] a11y cheat sheet
 
 {% image "./possum.png", "A possum parent and two possum kids hanging from the iconic red balloon" %}

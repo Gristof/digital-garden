@@ -4,8 +4,8 @@ body {
 	padding: 0;
 	margin: 0 auto;
 	font-family: var(--font-family-body);
-	color: var(--text-color);
-	background-color: var(--background-color);
+	color: var(--color-on-surface);
+	background-color: var(--color-surface);
 }
 html {
 	overflow-y: scroll;
@@ -35,14 +35,7 @@ li {
 }
 
 a[href] {
-	color: var(--text-color-link);
-}
-a[href]:visited {
-	color: var(--text-color-link-visited);
-}
-a[href]:hover,
-a[href]:active {
-	color: var(--text-color-link-active);
+	color: var(--link-color);
 }
 a[target="_blank"]::after {
 	content: "↗";
@@ -70,6 +63,14 @@ pre:not([class*="language-"]) {
 code {
 	word-break: break-all;
 }
+code:not([class*="language-"]) {
+	padding-inline: var(--spacing-rel-tiny);
+	border-radius: var(--spacing-rel-tiny);
+	background-color: var(--color-surface-bright);
+}
+ul {
+	list-style-type: disc;
+}
 
 /* Direct Links / Markdown Headers */
 .header-anchor {
@@ -88,7 +89,7 @@ a[href].header-anchor:hover {
 }
 a[href].header-anchor:focus,
 :hover > a[href].header-anchor {
-	color: hsl(0, 0%, 67%);
+	color: var(--color-gray-20);
 }
 h2 + .header-anchor {
 	font-size: 1.5em;
